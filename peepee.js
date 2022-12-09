@@ -8,10 +8,10 @@ function editDistance(w1, w2) {
 		dp.push([]);
 	}
 	for (var i=0; i<=w1.length; i++) {
-		dp[i].push(0);
+		dp[i].push(i);
 	}
 	for (var i=1; i<=w2.length; i++) {
-		dp[0].push(0);
+		dp[0].push(i);
 	}
 	for (var i=1; i<=w1.length; i++) {
 		for (var j=1; j<=w2.length; j++) {
@@ -30,11 +30,24 @@ function init() {
 	guesses = JSON.parse(list);
 	guesses2 = JSON.parse(list2);
 	answers = JSON.parse(list3);
+	answer = answers[Math.floor(Math.random()*answers.length)];
 	console.log(editDistance("sheep","beep"));
 	console.log(editDistance("sheep","noggin"));
 	console.log(editDistance("sheep","aship"));
 }
 
 function guess(word) {
-	console.log(guesses.dictionary.includes(word));
+	if (word.length>20) {
+		document.getElementById("yes").innerHTML = "too long";
+	}
+	if (!guesses.dictionary.includes(word)) {
+		document.getElementById("yes").innerHTML = "not a word";
+	} else {
+		var dist = editDistance(word,answer);
+		if (dist!=0) {
+			document.getElementById("yes").innerHTML = dist;
+		} else {
+			document.getElementById("yes").innerHTML = "good jobe";
+		}
+	}
 }
