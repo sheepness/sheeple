@@ -30,5 +30,5 @@ function guess(word) {
 }
 
 function init() {
-	console.log(guesses.)
+	console.log(guesses);
 }
