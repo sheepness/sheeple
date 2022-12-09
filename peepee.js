@@ -43,6 +43,8 @@ function guess(word) {
 	if (!guesses.dictionary.includes(word)) {
 		document.getElementById("yes").innerHTML = "not a word";
 	} else {
+		console.log(word);
+		console.log(answer);
 		var dist = editDistance(word,answer);
 		if (dist!=0) {
 			document.getElementById("yes").innerHTML = dist;
