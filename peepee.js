@@ -37,5 +37,5 @@ function init() {
 }
 
 function guess(word) {
-	console.log(guesses.includes(word));
+	console.log(guesses.dictionary.includes(word));
 }
