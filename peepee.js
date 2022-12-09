@@ -18,7 +18,7 @@ function editDistance(w1, w2) {
 			if (w1[i-1]==w2[j-1]) {
 				dp[i].push(dp[i-1][j-1]);
 			} else {
-				dp[i].push(1+min(min(dp[i-1][j],dp[i][j-1]),dp[i-1][j-1]));
+				dp[i].push(1+Math.min(dp[i-1][j],dp[i][j-1],dp[i-1][j-1]));
 			}
 		}
 	}
