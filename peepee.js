@@ -23,7 +23,7 @@ function editDistance(w1, w2) {
 
 function init() {
 	console.log("hii");
-	var guesses = JSON.parse(dictionary);
+	var guesses = JSON.parse(list);
 	console.log(guesses);
 }
 
