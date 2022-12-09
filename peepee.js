@@ -26,14 +26,10 @@ function editDistance(w1, w2) {
 }
 
 function init() {
-	console.log("hii");
 	guesses = JSON.parse(list);
 	guesses2 = JSON.parse(list2);
 	answers = JSON.parse(list3);
 	answer = answers.dictionary[Math.floor(Math.random()*answers.dictionary.length)];
-	console.log(editDistance("sheep","beep"));
-	console.log(editDistance("sheep","noggin"));
-	console.log(editDistance("sheep","aship"));
 }
 
 function guess(word) {
@@ -43,8 +39,6 @@ function guess(word) {
 	if (!guesses.dictionary.includes(word)) {
 		document.getElementById("yes").innerHTML = "not a word";
 	} else {
-		console.log(word);
-		console.log(answer);
 		var dist = editDistance(word,answer);
 		if (dist!=0) {
 			document.getElementById("yes").innerHTML = dist;
