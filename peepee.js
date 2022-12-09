@@ -1,7 +1,3 @@
-import guesses from './guesses.json' assert { type: 'json' };
-import guesses2 from './guesses us.json' assert { type: 'json' };
-import answers from './answers.json' assert { type: 'json' };
-
 function editDistance(w1, w2) {
 	var dp = []; //edit distance between prefixes of i,j lengths
 	for (var i=0; i<=w1.length; i++) {
@@ -25,10 +21,12 @@ function editDistance(w1, w2) {
 	return dp[w1.length][w2.length];
 }
 
-function guess(word) {
-	console.log("hi");
+function init() {
+	console.log("hii");
+	var guesses = JSON.parse(list);
+	console.log(guesses);
 }
 
-function init() {
-	console.log(guesses);
+function guess() {
+	console.log("hi");
 }

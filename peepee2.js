@@ -21,10 +21,8 @@ function editDistance(w1, w2) {
 	return dp[w1.length][w2.length];
 }
 
-function guess(word) {
-	console.log("hi");
-}
-
 function init() {
 	console.log("hii");
+	var guesses = require('guesses.json');
+	console.log(guesses);
 }
