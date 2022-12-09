@@ -30,7 +30,7 @@ function init() {
 	guesses = JSON.parse(list);
 	guesses2 = JSON.parse(list2);
 	answers = JSON.parse(list3);
-	answer = answers[Math.floor(Math.random()*answers.length)];
+	answer = answers.dictionary[Math.floor(Math.random()*answers.dictionary.length)];
 	console.log(editDistance("sheep","beep"));
 	console.log(editDistance("sheep","noggin"));
 	console.log(editDistance("sheep","aship"));
