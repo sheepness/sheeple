@@ -14,7 +14,7 @@ function editDistance(w1, w2) {
 		dp[0].push(0);
 	}
 	for (var i=1; i<=w1.length; i++) {
-		for (int j=1; j<=w2.length; j++) {
+		for (var j=1; j<=w2.length; j++) {
 			if (w1[i-1]==w2[j-1]) {
 				dp[i].push(dp[i-1][j-1]);
 			} else {
