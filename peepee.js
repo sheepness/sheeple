@@ -26,7 +26,7 @@ function editDistance(w1, w2) {
 }
 
 function guess(word) {
-
+	console.log("hi");
 }
 
 function init() {
