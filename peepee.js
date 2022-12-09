@@ -1,6 +1,6 @@
-import guesses from './guesses.json' assert { type: 'JSON' };
-import guesses2 from './guesses us.json' assert { type: 'JSON' };
-import answers from './answers.json' assert { type: 'JSON' };
+import guesses from './guesses.json' assert { type: 'json' };
+import guesses2 from './guesses us.json' assert { type: 'json' };
+import answers from './answers.json' assert { type: 'json' };
 
 function editDistance(w1, w2) {
 	var dp = []; //edit distance between prefixes of i,j lengths
