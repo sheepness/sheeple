@@ -1,3 +1,7 @@
+var guesses;
+var guesses2;
+var answers;
+var answer = "sheep";
 function editDistance(w1, w2) {
 	var dp = []; //edit distance between prefixes of i,j lengths
 	for (var i=0; i<=w1.length; i++) {
@@ -23,10 +27,15 @@ function editDistance(w1, w2) {
 
 function init() {
 	console.log("hii");
-	var guesses = JSON.parse(list);
-	console.log(guesses);
+	guesses = JSON.parse(list);
+	guesses2 = JSON.parse(list2);
+	answers = JSON.parse(list3);
+	console.log(guess("sheep"));
+	console.log(guess("fuck"));
+	console.log(guess("baa"));
+	console.log(guess("asdf"));
 }
 
-function guess() {
-	console.log("hi");
+function guess(word) {
+	console.log(guesses.includes(word));
 }
