@@ -30,10 +30,9 @@ function init() {
 	guesses = JSON.parse(list);
 	guesses2 = JSON.parse(list2);
 	answers = JSON.parse(list3);
-	console.log(guess("sheep"));
-	console.log(guess("fuck"));
-	console.log(guess("baa"));
-	console.log(guess("asdf"));
+	console.log(editDistance("sheep","beep"));
+	console.log(editDistance("sheep","noggin"));
+	console.log(editDistance("sheep","aship"));
 }
 
 function guess(word) {
