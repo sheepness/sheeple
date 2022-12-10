@@ -32,9 +32,11 @@ function init() {
 	answer = answers.dictionary[Math.floor(Math.random()*answers.dictionary.length)];
 }
 
-function guess(word) {
-	if (word.length>20) {
-		document.getElementById("yes").innerHTML = "too long";
+function guess(w) {
+	var word = w.toLowerCase();
+	if (word.length<4) {
+		document.getElementById("yes").innerHTML = "too short";
+		return;
 	}
 	if (!guesses.dictionary.includes(word)) {
 		document.getElementById("yes").innerHTML = "not a word";
