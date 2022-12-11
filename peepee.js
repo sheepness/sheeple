@@ -1,7 +1,10 @@
 var guesses;
 var guesses2;
 var answers;
+var guessCount = 0;
+var correct = false;
 var xdd;
+var guessList = [];
 
 function editDistance(w1, w2) {
 	var dp = []; //edit distance between prefixes of i,j lengths
@@ -60,5 +63,13 @@ function guess(w) {
 		} else {
 			document.getElementById("yes").innerHTML = "good jobe";
 		}
+		if (!correct) {
+			document.getElementById("guessCount").innerHTML = "guesses: " + ++guessCount;
+			if (dist==0) {
+				correct =true;
+			}
+			document.getElementById("guesses").innerHTML = word + " " + dist + "<br>" + document.getElementById("guesses").innerHTML;
+		}
 	}
+
 }

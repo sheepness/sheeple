@@ -9,7 +9,9 @@
 	<script type="text/javascript" src="answers.js"></script>
 	<script src="peepee.js"></script>
 	<span>type an english word and press enter</span><br>
-	<input id="box" type="text" name="text" onkeydown="if (event.keyCode == 13) guess(document.getElementById('box').value)"><br>
-	<span id="yes"></span>
+	<input id="box" type="text" name="text" onkeydown="if (event.keyCode == 13) guess(document.getElementById('box').value)">
+	<span id="yes"></span><br>
+	<span id="guessCount">guesses: 0</span>
+	<div id="guesses"></div>
 </body>
 </html>
