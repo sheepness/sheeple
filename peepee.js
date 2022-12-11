@@ -45,6 +45,16 @@ function init() {
 	var dt = new Date();
 	var xd = dt.getUTCFullYear()*400+dt.getUTCMonth()*40+dt.getUTCDate();
 	xdd = mulberry32(xd)();
+	l = [['q','w','e','r','t','y','u','i','o','p'],['a','s','d','f','g','h','j','k','l'],['z','x','c','v','b','n','m']];
+	for (var i=0; i<l.length; i++) {
+		for (var j=0; j<l[i].length; j++) {
+			document.getElementById("keyboard").innerHTML += "<input type=\"button\" onClick=\"document.getElementById('box').value+='"+l[i][j]+"'\" value=\""+l[i][j]+"\">"
+		}
+		if (i!=2) {
+			document.getElementById("keyboard").innerHTML += "<br>";
+		}
+	}
+	document.getElementById("keyboard").innerHTML += "<input type=\"button\" onClick=\"document.getElementById('box').value=document.getElementById('box').value.slice(0,-1)\" value=\"delete\">"
 }
 
 function guess(w) {
