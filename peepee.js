@@ -1,8 +1,7 @@
 var guesses;
 var guesses2;
 var answers;
-var answer = "sheep";
-
+var xdd;
 
 function editDistance(w1, w2) {
 	var dp = []; //edit distance between prefixes of i,j lengths
@@ -40,14 +39,14 @@ function init() {
 	guesses = JSON.parse(list);
 	guesses2 = JSON.parse(list2);
 	answers = JSON.parse(list3);
-	//answer = answers.dictionary[Math.floor(Math.random()*answers.dictionary.length)];
 	var dt = new Date();
 	var xd = dt.getUTCFullYear()*400+dt.getUTCMonth()*40+dt.getUTCDate();
-	answer = answers.dictionary[mulberry32(xd)%answers.dictionary.length];
+	xdd = mulberry32(xd)();
 }
 
 function guess(w) {
 	var word = w.toLowerCase();
+	var answer = guesses.dictionary[Math.floor(xdd*guesses.dictionary.length)];
 	if (word.length<4) {
 		document.getElementById("yes").innerHTML = "too short";
 		return;
