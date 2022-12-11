@@ -8,8 +8,9 @@
 	<script type="text/javascript" src="guesses us.js"></script>
 	<script type="text/javascript" src="answers.js"></script>
 	<script src="peepee.js"></script>
-	<span>type an english word and press enter</span><br>
+	<span>guess an english word</span><br>
 	<input id="box" type="text" name="text" onkeydown="if (event.keyCode == 13) guess(document.getElementById('box').value)">
+	<input type="button" onClick="guess(document.getElementById('box').value)" value="guess">
 	<span id="yes"></span><br>
 	<span id="guessCount">guesses: 0</span>
 	<div id="guesses"></div>
