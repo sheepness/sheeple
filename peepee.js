@@ -81,5 +81,5 @@ function guess(w) {
 			document.getElementById("guesses").innerHTML = word + " " + dist + "<br>" + document.getElementById("guesses").innerHTML;
 		}
 	}
-
+	document.getElementById("box").value = '';
 }
