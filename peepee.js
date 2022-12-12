@@ -58,7 +58,7 @@ function init() {
 }
 
 function guess(w) {
-	var word = w.toLowerCase();
+	var word = w.toLowerCase().trim();
 	var answer = guesses.dictionary[Math.floor(xdd*guesses.dictionary.length)];
 	if (word.length<4) {
 		document.getElementById("yes").innerHTML = "too short";
