@@ -104,7 +104,7 @@ function guess(w) {
 	document.getElementById("box").value = '';
 }
 function copy() {
-	var s = "";
+	var s = "guesses: "+guessCount+"\n";
 	for (var i=0; i<guessList.length; i++) {
 		s = s + guessList[i][0]+" "+guessList[i][1];
 		if (i!=guessList.length-1) {
