@@ -103,7 +103,16 @@ function guess(w) {
 	}
 	document.getElementById("box").value = '';
 }
-
+function copy() {
+	var s = "";
+	for (var i=0; i<guessList.length; i++) {
+		s = s + guessList[i][0]+" "+guessList[i][1];
+		if (i!=guessList.length-1) {
+			s = s + "\n";
+		}
+	}
+	navigator.clipboard.writeText(s);
+}
 function save() {
 	var info = {
 		guessList:guessList,
