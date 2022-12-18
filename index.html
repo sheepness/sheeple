@@ -3,11 +3,11 @@
   <meta charset="utf-8">
   <title>editle</title>
 </head>
-<body onLoad="init()">
+<body onbeforeunload="save()" onLoad="init()">
 	<script type="text/javascript" src="guesses.js"></script>
 	<script type="text/javascript" src="guesses us.js"></script>
 	<script type="text/javascript" src="answers.js"></script>
-	<script src="peepee.js"></script>
+	<script src="peepee2.js"></script>
 	<span>guess&nbsp;an&nbsp;english&nbsp;word&nbsp;(<a href="https://en.wikipedia.org/wiki/Levenshtein_distance" target="_blank">huh?</a>)</span><br>
 	<input id="box" type="text" name="text" onkeydown="if (event.keyCode == 13) guess(document.getElementById('box').value)">
 	<input type="button" onClick="guess(document.getElementById('box').value)" value="guess">
