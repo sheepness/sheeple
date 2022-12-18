@@ -4,6 +4,7 @@ var answers;
 var guessCount = 0;
 var correct = false;
 var xdd;
+var xddCheck;
 var guessList = [];
 
 function editDistance(w1, w2) {
@@ -42,10 +43,24 @@ function init() {
 	guesses = JSON.parse(list);
 	guesses2 = JSON.parse(list2);
 	answers = JSON.parse(list3);
-	load();
 	var dt = new Date();
 	var xd = dt.getUTCFullYear()*400+dt.getUTCMonth()*40+dt.getUTCDate();
 	xdd = mulberry32(xd)();
+	load();
+	if (guessList) {
+		guessCount = guessList.length;
+	}
+	for (var i=0; i<guessCount; i++) {
+		var word = guessList[i][0];
+		var dist = guessList[i][1];
+		document.getElementById("guesses").innerHTML = word + " " + dist + "<br>" + document.getElementById("guesses").innerHTML;
+		if (dist==0) {
+			correct = true;
+		}
+	}
+
+	document.getElementById("guessCount").innerHTML = "guesses: " + guessCount;
+	
 	l = [['q','w','e','r','t','y','u','i','o','p'],['a','s','d','f','g','h','j','k','l'],['z','x','c','v','b','n','m']];
 	for (var i=0; i<l.length; i++) {
 		for (var j=0; j<l[i].length; j++) {
@@ -83,18 +98,29 @@ function guess(w) {
 				correct =true;
 			}
 			document.getElementById("guesses").innerHTML = word + " " + dist + "<br>" + document.getElementById("guesses").innerHTML;
+			guessList.push([word,dist]);
 		}
 	}
 	document.getElementById("box").value = '';
-	guessList.push([word,dist]);
 }
 
 function save() {
-	localStorage.setItem("save",JSON.stringify(guessList));
+	var info = {
+		guessList:guessList,
+		xdd:xdd,
+	}
+	localStorage.setItem("sheeple",JSON.stringify(info));
 }
 function load() {
-	var g = JSON.parse(localStorage.getItem("save"));
-	if (typeof g !== "undefined") {
-		guessList = g;
+	var g = JSON.parse(localStorage.getItem("sheeple"));
+	if (g !== null) {
+		if (typeof g.guessList !== "undefined") {
+			guessList = g.guessList;
+		}
+		if (typeof g.xdd !== "undefined") {
+			if (xdd != g.xdd) {
+				guessList = [];
+			}
+		}
 	}
 }
